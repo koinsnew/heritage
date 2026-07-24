@@ -1081,10 +1081,10 @@ footer {
       <li>
         <a href="#">지사소개</a>
         <div class="dropdown">
+          <a href="#" onclick="openTour();return false;">지사 둘러보기</a>
           <a href="#" onclick="openHeritage();return false;">헤리티지 경쟁력</a>
           <a href="#" onclick="openYeongup();return false;">영업지원</a>
           <a href="#" onclick="openYuksung();return false;">육성시스템</a>
-          <a href="#" onclick="openCareerPath();return false;">Career Path</a>
         </div>
       </li>
       <li>
@@ -1093,6 +1093,7 @@ footer {
           <a href="#" onclick="openSoduk();return false;">소득비전</a>
           <a href="#" onclick="openPromotion();return false;">프로모션</a>
           <a href="#" onclick="openWelfare();return false;">복지제도</a>
+          <a href="#" onclick="openCareerPath();return false;">Career Path</a>
         </div>
       </li>
       <li>
@@ -1129,10 +1130,10 @@ footer {
       지사소개 <span class="arrow">›</span>
     </div>
     <div class="mobile-drawer-sub" id="sub2">
+      <a href="#" onclick="closeDrawer();openTour();return false;">지사 둘러보기</a>
       <a href="#" onclick="closeDrawer();openHeritage();return false;">헤리티지 경쟁력</a>
       <a href="#" onclick="closeDrawer();openYeongup();return false;">영업지원</a>
       <a href="#" onclick="closeDrawer();openYuksung();return false;">육성시스템</a>
-      <a href="#" onclick="closeDrawer();openCareerPath();return false;">Career Path</a>
     </div>
   </div>
 
@@ -1144,6 +1145,7 @@ footer {
       <a href="#" onclick="closeDrawer();openSoduk();return false;">소득비전</a>
       <a href="#" onclick="closeDrawer();openPromotion();return false;">프로모션</a>
       <a href="#" onclick="closeDrawer();openWelfare();return false;">복지제도</a>
+      <a href="#" onclick="closeDrawer();openCareerPath();return false;">Career Path</a>
     </div>
   </div>
 
@@ -1632,6 +1634,32 @@ if (statsEl) observer.observe(statsEl);
   </div>
 </div>
 
+<!-- 지사 둘러보기 MODAL -->
+<div id="tourModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);overflow-y:auto;">
+  <div style="max-width:1100px;margin:0 auto;padding:30px 20px;position:relative;">
+    <button onclick="closeTour()" style="position:fixed;top:20px;right:28px;background:none;border:1.5px solid rgba(184,151,90,0.6);color:var(--gold);font-size:22px;width:44px;height:44px;cursor:pointer;z-index:10000;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;">✕</button>
+    <div style="text-align:center;margin-bottom:36px;padding-top:10px;">
+      <p style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:4px;color:var(--gold);margin-bottom:10px;">HERITAGE FINANCE</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--white);font-weight:600;">지사 둘러보기</h2>
+      <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <img src="images/tour-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 1" loading="lazy" decoding="async">
+      <img src="images/tour-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 2" loading="lazy" decoding="async">
+      <img src="images/tour-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 3" loading="lazy" decoding="async">
+      <img src="images/tour-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 4" loading="lazy" decoding="async">
+      <img src="images/tour-5.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 5" loading="lazy" decoding="async">
+      <img src="images/tour-6.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 6" loading="lazy" decoding="async">
+      <img src="images/tour-7.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 7" loading="lazy" decoding="async">
+      <img src="images/tour-8.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 8" loading="lazy" decoding="async">
+      <img src="images/tour-9.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="지사 둘러보기 9" loading="lazy" decoding="async">
+    </div>
+    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
+      <button onclick="closeTour()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    </div>
+  </div>
+</div>
+
 <!-- 영업지원 MODAL -->
 <div id="yeongupModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);overflow-y:auto;">
   <div style="max-width:1100px;margin:0 auto;padding:30px 20px;position:relative;">
@@ -1993,6 +2021,14 @@ function toggleSub(id, el) {
 }
 
 
+function openTour() {
+  document.getElementById('tourModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeTour() {
+  document.getElementById('tourModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
 function openHeritage() {
   document.getElementById('heritageModal').style.display = 'block';
   document.body.style.overflow = 'hidden';
