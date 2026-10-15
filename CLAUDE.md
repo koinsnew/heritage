@@ -24,7 +24,7 @@ images/          # 이미지 37장
 | 접두어 | 섹션 |
 |---|---|
 | `member-1` ~ `member-5` | 구성원 프로필 |
-| `tour-*` | 지사 둘러보기 |
+| `videos/tour.mp4` | 지사 둘러보기 (이미지가 아닌 **영상** 1개, `<video>` 태그) |
 | `competitive-*` | 헤리티지 경쟁력 |
 | `sales-support-*` | 영업지원 |
 | `training-*` | 육성시스템 |
