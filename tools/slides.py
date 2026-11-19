@@ -20,7 +20,14 @@ body::before{content:'';position:absolute;inset:0;background:
   linear-gradient(90deg, rgba(184,151,90,.045) 1px, transparent 1px);
   background-size:auto, 80px 80px, 80px 80px}
 body.wide{--pad:80px;--t:66px;--b:40px;--s:30px;--gap:34px;--num:290px}
-body.tall{--pad:72px;--t:66px;--b:42px;--s:34px;--gap:30px;--num:270px}
+body.tall{--pad:64px;--t:64px;--b:46px;--s:40px;--gap:32px;--num:250px}
+/* 모바일용(tall)은 높이를 내용에 맞춘다. 폰에서 1/3로 줄어 보이므로 글자는 36px 아래로 내리지 않는다 */
+html:has(body.tall),body.tall{height:auto;min-height:0}
+body.tall{overflow:visible}
+.tall main{position:relative;inset:auto;padding-bottom:calc(var(--pad)*1.9)}
+.tall .content{flex:none;justify-content:flex-start}
+.tall h1{margin-bottom:calc(var(--gap)*1.2)}
+.tall .mark{font-size:22px}
 main{position:absolute;inset:0;padding:var(--pad);padding-bottom:calc(var(--pad)*1.15);display:flex;flex-direction:column}
 h1{font-size:var(--t);font-weight:700;line-height:1.28;letter-spacing:-.01em}
 h1 em{font-style:normal;color:#d4b483}
@@ -116,16 +123,20 @@ li::before{content:'';position:absolute;left:0;top:.62em;width:.34em;height:.34e
 .ex li{font-size:calc(var(--s)*.84);margin-top:.28em}
 .wide .ex{padding-bottom:calc(var(--s)*(.9 + var(--i)*1.1))}
 .tall .exec{grid-template-columns:1fr;gap:12px}
-.tall .ex{border-top:none;border-left:4px solid #b8975a;display:grid;grid-template-columns:210px 1fr;column-gap:20px;align-items:center;padding:16px 20px}
+.tall .ex{border-top:none;border-left:4px solid #b8975a;display:grid;grid-template-columns:auto 1fr;column-gap:24px;align-items:baseline;padding:22px 26px}
+.tall .ex small{grid-column:1 / -1;font-size:26px}
 .tall .ex .m{border:none;padding:0}
-.tall .ex ul{grid-column:2;grid-row:1 / span 3;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
-.tall .ex li{font-size:calc(var(--s)*.86);margin-top:.12em}
+.tall .ex ul{grid-column:1 / -1;margin:.35em 0 0;padding-top:.35em;border-top:1px solid rgba(255,255,255,.2);display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.tall .ex li{font-size:calc(var(--s)*.9);margin-top:.15em}
 .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
 .tall .tri{grid-template-columns:1fr;gap:calc(var(--gap)*.5)}
 .tall .tri .cell{display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:left;padding:14px 22px}
 .tall .tri .cell small{grid-column:1 / -1}
 .tall .tri .cell .k{text-align:right}
 .tall .tri .cell .k small{grid-column:auto}
+.tall .cell small,.tall .total small,.tall .stair small{font-size:calc(var(--s)*.9)}
+.tall .cell .k small{font-size:.42em}
+.tall .stairs{height:auto}
 .chip .k{display:block;font-size:calc(var(--b)*1.9);font-weight:700;color:#d4b483;line-height:1.2}
 .chip .tag{display:block;font-size:var(--s);color:#d4b483;font-weight:700;margin-bottom:.3em}
 .fine{font-size:calc(var(--s)*.9);color:#a9a9a9;line-height:1.6;border-top:1px solid rgba(255,255,255,.16);padding-top:.8em}
@@ -380,7 +391,9 @@ SLIDES = {
 def page(title, body, variant, opts=None):
     if variant == 'tall':
         import re
-        body = re.sub(r'--lw:[^"]*" data-lw-tall="([^"]*)"', r'--lw:\1"', body)
+        body = re.sub(r'--lw:[^"]*" data-lw-tall="(\d+)px"', lambda m: '--lw:%dpx"' % round(int(m.group(1)) * 1.22), body)
+        body = re.sub(r'(class="bars" style="--lw:)(\d+)px', lambda m: '%s%dpx' % (m.group(1), round(int(m.group(2)) * 1.22)), body)
+        opts = None   # 모바일용은 슬라이드별 크기 조정을 쓰지 않는다(글자 하한 유지)
     return ('<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">'
             '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">'
             f'<style>{CSS}</style></head><body class="{variant}" style="{(opts or {}).get(variant, "")}"><main><h1><span>{title}</span></h1>'
@@ -392,7 +405,7 @@ async def render(out_dir):
     os.makedirs(out_dir, exist_ok=True)
     async with async_playwright() as p:
         browser = await p.chromium.launch()
-        for variant, (w, h), suffix in (('wide', (1600, 900), ''), ('tall', (1080, 1350), '-m')):
+        for variant, (w, h), suffix in (('wide', (1600, 900), ''), ('tall', (1080, 600), '-m')):
             pg = await browser.new_page(viewport={'width': w, 'height': h})
             for prefix, slides in SLIDES.items():
                 for i, sl in enumerate(slides, 1):
@@ -417,11 +430,11 @@ async def render(out_dir):
                     # 넘치면 글자·간격을 조금씩 줄여 맞춘다
                     over = await pg.evaluate('''(()=>{const m=document.querySelector('.content'),b=document.body,
                       get=()=>m.scrollHeight-m.clientHeight;
-                      for(let i=0;i<14&&get()>2;i++){const cs=getComputedStyle(b);
+                      for(let i=0;i<14&&get()>2&&!b.classList.contains('tall');i++){const cs=getComputedStyle(b);
                         for(const v of ['--b','--s','--gap','--num'])b.style.setProperty(v,(parseFloat(cs.getPropertyValue(v))*0.96)+'px');}
                       return get()})()''')
                     path = os.path.join(out_dir, f'{prefix}-{i}{suffix}.jpg')
-                    await pg.screenshot(path=path, type='jpeg', quality=86)
+                    await pg.screenshot(path=path, type='jpeg', quality=86, full_page=(variant == 'tall'))
                     print(path, tinfo, 'OVERFLOW %dpx' % over if over > 2 else 'ok')
             await pg.close()
         await browser.close()
