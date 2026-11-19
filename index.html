@@ -1203,6 +1203,9 @@ p[style*="font-size:10px"], div[style*="font-size:10px"], span[style*="font-size
 }
 .support-item:hover .hx-more-link::after, .support-item:focus-visible .hx-more-link::after { transform: translateX(4px) rotate(45deg); }
 .support-desc { color: #a3a3a3; font-size: 13px; }
+.support-title { white-space: nowrap; font-size: clamp(13px, 1.25vw + 4px, 16px); }
+.support-desc { word-break: keep-all; text-wrap: balance; }
+@media (max-width: 768px) { .support-title { font-size: clamp(14px, 4.2vw, 16px); } }
 
 /* PC 드롭다운: 키보드·터치로도 열림 */
 .nav-links > li:focus-within .dropdown,
@@ -1792,7 +1795,7 @@ picture { display: block; }
     <div class="support-item" onclick="openPromotion()" style="cursor:pointer;">
       <div class="support-num">04</div>
       <div class="support-title">헤리티지 프로모션</div>
-      <div class="support-desc">루키 보너스, 성장 지원금, 리크루팅 보너스와 시상 제도입니다.</div>
+      <div class="support-desc">루키 보너스와 성장 지원금, 시상 제도를 안내합니다.</div>
       <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openCareerPath()" style="cursor:pointer;">
