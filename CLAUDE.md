@@ -32,6 +32,7 @@ images/          # 이미지 37장
 | `promotion-*` | 프로모션 |
 | `career-path-*` | Career Path |
 | `welfare-*` | 복지제도 |
+| `og-image.jpg` | 링크 썸네일(1200x630, `og:image`). 주소는 Vercel 절대 경로로 적혀 있습니다 |
 
 ## '영업의 새로운 기준' 6개 메뉴 슬라이드
 
