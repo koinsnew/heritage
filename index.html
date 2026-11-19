@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HERITAGE FINANCE</title>
+<meta name="description" content="한국보험금융 직영채널 헤리티지 금융지사 FC 지원 안내. 지원·문의 02-6956-5323">
+<meta property="og:type" content="website">
+<meta property="og:title" content="헤리티지 금융지사 | HERITAGE FINANCE">
+<meta property="og:description" content="한국보험금융 직영채널 헤리티지 금융지사 FC 지원 안내. 지원·문의 02-6956-5323">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600;700;800&family=Nanum+Myeongjo:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 <style>
@@ -1111,6 +1115,248 @@ footer {
   .hv-letter p.hv-letter-greet { font-size: 17px; }
   .hv-letter-sign strong { font-size: 40px; }
 }
+
+/* ═══ 지원 경로 · 지원서 · 모바일 적응 · 접근성 (hx-) ═══ */
+:root { --gold-deep: #7d6230; }
+
+::selection { background: var(--gold); color: var(--dark); }
+:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+.about-section :focus-visible,
+.org-section :focus-visible,
+#contact :focus-visible { outline-color: var(--gold-deep); }
+#applyForm input:focus-visible, #applyForm select:focus-visible, #applyForm textarea:focus-visible,
+#inquiryForm input:focus-visible, #inquiryForm select:focus-visible, #inquiryForm textarea:focus-visible {
+  outline: 2px solid var(--gold-light) !important;
+  outline-offset: 1px;
+  border-color: var(--gold) !important;
+}
+#applyForm input, #applyForm textarea, #inquiryForm input, #inquiryForm textarea { caret-color: var(--gold-light); }
+#applyForm ::placeholder, #inquiryForm ::placeholder { color: #8f8f8f; opacity: 1; }
+
+/* 밝은 배경 위 골드 글씨 대비 */
+.about-section .section-eyebrow,
+.org-section .section-eyebrow,
+#contact .section-eyebrow { color: var(--gold-deep); }
+.profile-grid > div:last-child [style*="color:var(--gold)"] { color: var(--gold-deep) !important; }
+.profile-grid > div:last-child span[style*="font-size:10px"] { font-size: 11px !important; }
+
+/* 10px 라벨은 11px로 */
+p[style*="font-size:10px"], div[style*="font-size:10px"], span[style*="font-size:10px"] { font-size: 11px !important; }
+
+/* 어두운 배경 위 흐린 글씨 대비 */
+.support-num { color: rgba(184,151,90,0.6); }
+.footer-copyright, .footer-links a { color: #9a9a9a; }
+.footer-notice { color: #9a9a9a; font-size: 12px; }
+.recruit-section p { color: rgba(10,10,10,0.86); }
+
+/* 버튼 */
+.hx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 30px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+.hx-btn:active { transform: translateY(1px); }
+.hx-btn-gold { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+.hx-btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.hx-btn-line { background: transparent; color: var(--gold-light); border-color: rgba(184,151,90,0.75); }
+.hx-btn-line:hover { background: rgba(184,151,90,0.14); }
+.hx-btn-ghost { background: transparent; color: #cfcfcf; border-color: rgba(255,255,255,0.28); }
+.hx-btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+.hx-btn-dark { background: var(--dark); color: var(--gold-light); border-color: var(--dark); }
+.hx-btn-dark:hover { background: var(--black); }
+.hx-btn-darkline { background: transparent; color: var(--dark); border-color: var(--dark); }
+.hx-btn-darkline:hover { background: rgba(17,17,17,0.07); }
+.btn-dark { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; letter-spacing: 0.02em; text-transform: none; }
+
+/* 첫 화면: 초대 문구 + 버튼 */
+.hx-invite {
+  margin: 20px auto 0;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.86);
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.05s forwards;
+}
+.hx-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.hero .hx-cta { margin-top: 30px; opacity: 0; animation: fadeInUp 1s ease 1.2s forwards; }
+
+/* 서신 다음: 다음 행동 */
+.hx-next { max-width: 820px; margin: 44px auto 0; text-align: center; }
+.hx-next p { font-size: 15px; color: #444; margin-bottom: 20px; }
+.hx-tel-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 8px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--gold-deep);
+}
+.hx-tel-plain { color: inherit; text-decoration: none; }
+.hx-tel-plain:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* 조직도 */
+.hx-org-hint { text-align: center; font-size: 13px; color: #6b6b6b; margin: -8px 0 36px; }
+.hx-org-grid [onclick] { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+
+/* 영업의 새로운 기준 카드 */
+.hx-more-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 12px; font-weight: 500; color: var(--gold-light); }
+.hx-more-link::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+.support-item:hover .hx-more-link::after, .support-item:focus-visible .hx-more-link::after { transform: translateX(4px) rotate(45deg); }
+.support-desc { color: #a3a3a3; font-size: 13px; }
+
+/* PC 드롭다운: 키보드·터치로도 열림 */
+.nav-links > li:focus-within .dropdown,
+.nav-links > li.hx-open .dropdown { display: block; }
+
+/* 모달: 뒤 본문이 비치지 않게 */
+#heritageModal, #tourModal, #yeongupModal, #yuksungModal, #sodukModal, #promotionModal,
+#careerPathModal, #welfareModal, #inquiryModal, #applyModal { background: #0a0a0a !important; }
+#applySubmitBtn, #inquirySubmitBtn {
+  font-family: 'Noto Sans KR', sans-serif !important;
+  font-size: 15px !important;
+  letter-spacing: 0.02em !important;
+  min-height: 52px;
+}
+#applySubmitBtn:disabled, #inquirySubmitBtn:disabled { opacity: 0.6; cursor: default; }
+
+/* 모달 하단 버튼 */
+.hx-modal-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 36px; padding-bottom: 20px; }
+.hx-x { min-width: 44px; min-height: 44px; }
+.hx-zoom-hint { display: none; }
+
+/* 지원서: 먼저 받는 항목 + 접힌 상세 */
+.hx-form-note { font-size: 13px; line-height: 1.8; color: #bdbdbd; margin: -4px 0 18px; }
+.hx-more { border: 1px solid rgba(184,151,90,0.3); background: #161616; }
+.hx-more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 14px 22px;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+.hx-more > summary::-webkit-details-marker { display: none; }
+.hx-more > summary small { display: block; margin-top: 4px; font-size: 12px; font-weight: 400; color: #a3a3a3; }
+.hx-more > summary::after {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--gold-light);
+  border-bottom: 1.5px solid var(--gold-light);
+  transform: rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+.hx-more[open] > summary::after { transform: rotate(-135deg); }
+.hx-more-body { display: flex; flex-direction: column; gap: 24px; padding: 6px 16px 20px; }
+
+/* 개인정보 동의 */
+.hx-consent { border: 1px solid rgba(255,255,255,0.12); padding: 6px 18px 14px; }
+.hx-check { display: flex; align-items: center; gap: 12px; min-height: 48px; cursor: pointer; font-size: 14px; color: #e6e6e6; }
+.hx-check input { flex: none; width: 20px; height: 20px; accent-color: var(--gold); }
+.hx-check em { font-style: normal; color: var(--gold-light); }
+.hx-consent details { font-size: 13px; color: #b5b5b5; }
+.hx-consent summary { cursor: pointer; display: inline-block; padding: 8px 0; color: var(--gold-light); text-decoration: underline; text-underline-offset: 4px; }
+.hx-consent dl { margin-top: 6px; display: grid; grid-template-columns: 84px 1fr; gap: 6px 12px; line-height: 1.7; }
+.hx-consent dt { color: #8f8f8f; }
+.hx-consent dd { margin: 0; }
+.hx-consent .hx-consent-foot { margin-top: 10px; line-height: 1.7; }
+.hx-hint { color: #9a9a9a; font-size: 12px; margin-top: 12px; }
+
+/* 모바일 하단 고정 바 */
+.hx-bar { display: none; }
+
+@media (max-width: 768px) {
+  .hx-invite { font-size: 14px; padding: 0 10px; }
+  .hero .hx-cta { margin-top: 24px; padding: 0 10px; }
+  .hx-cta .hx-btn { flex: 1 1 108px; padding: 0 12px; }
+  .hx-next { margin-top: 32px; }
+
+  .hx-bar {
+    display: grid;
+    grid-template-columns: 2fr 1.4fr 1fr;
+    gap: 8px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(10,10,10,0.97);
+    border-top: 1px solid rgba(184,151,90,0.4);
+    transform: translateY(110%);
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), visibility 0s linear 0.4s;
+  }
+  .hx-bar.hx-bar-on { transform: none; visibility: visible; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), visibility 0s; }
+  .hx-bar .hx-btn { min-height: 46px; padding: 0 8px; font-size: 14px; }
+  footer { padding-bottom: 96px; }
+
+  /* 조직도: 가로 스크롤 대신 세로로 쌓기 */
+  .org-section { padding: 60px 0 !important; }
+  .org-section .section-inner > div:last-child { overflow-x: visible; padding: 0; }
+  .org-section .section-inner > div:last-child > div { min-width: 0; }
+  .hx-org-grid { grid-template-columns: 1fr !important; }
+  .hx-org-root > div { padding: 14px 20px !important; letter-spacing: 2px !important; }
+  .hx-org-hint { margin-bottom: 28px; padding: 0 10px; }
+
+  .nav-hamburger { min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+  .mobile-drawer-contact .tel { display: inline-block; padding: 11px 0; }
+  .mobile-drawer-sub a { min-height: 44px; }
+
+  .hx-modal-actions .hx-btn { flex: 1 1 120px; }
+  .hx-zoom-hint { display: block; text-align: center; font-size: 12px; color: #a3a3a3; margin: -18px 0 20px; }
+  .hx-zoomwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .hx-zoomwrap img { cursor: zoom-in; }
+  .hx-zoomwrap img.hx-zoom { width: 230% !important; max-width: none; cursor: zoom-out; }
+
+  #inquiryForm input, #inquiryForm select, #inquiryForm textarea { font-size: 16px !important; }
+  #applyForm input, #applyForm select, #inquiryForm input, #inquiryForm select { min-height: 46px; }
+  #applyForm .hx-check input, #inquiryForm .hx-check input { min-height: 0; }
+  .hx-more-body { padding: 4px 10px 14px; }
+  .hx-more-body > div { padding: 18px 14px 14px !important; }
+  .hx-more-body > div > div { grid-template-columns: 1fr !important; }
+  .hx-more > summary { padding: 12px 16px; }
+  .hx-consent dl { grid-template-columns: 72px 1fr; }
+  #inquirySubmitBtn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1226,7 +1472,13 @@ footer {
     <p class="hero-subtitle">FINANCE</p>
     <div class="hero-divider"></div>
     <p class="hero-tagline">누구나 도전할 수 있지만,<br>아무나 성공할 수는 없다.</p>
-    </section>
+    <p class="hx-invite">배경이나 스펙보다, 용기와 의지를 봅니다.</p>
+    <div class="hx-cta">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="openApply()">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="openInquiry()">문의하기</button>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
@@ -1313,7 +1565,7 @@ footer {
                   </div>
                   <div style="padding:10px 0 10px 20px;border-bottom:1px solid rgba(0,0,0,0.05);">
                     <p style="font-size:13px;font-weight:600;color:#222;">동양생명 연도대상 본상</p>
-                    <p style="font-size:11px;color:#888;margin-top:2px;">FC 부문</p>
+                    <p style="font-size:12px;color:#6b6b6b;margin-top:2px;">FC 부문</p>
                   </div>
                 </div>
 
@@ -1323,7 +1575,7 @@ footer {
                   </div>
                   <div style="padding:10px 0 10px 20px;border-bottom:1px solid rgba(0,0,0,0.05);">
                     <p style="font-size:13px;font-weight:600;color:#222;">신한라이프 영업대상 챔피언</p>
-                    <p style="font-size:11px;color:#888;margin-top:2px;">관리자 부문</p>
+                    <p style="font-size:12px;color:#6b6b6b;margin-top:2px;">관리자 부문</p>
                   </div>
                 </div>
 
@@ -1363,6 +1615,15 @@ footer {
             <strong>옥영훈</strong>
           </div>
         </div>
+
+        <div class="hx-next">
+          <p>궁금한 점은 편하게 물어보세요.</p>
+          <div class="hx-cta">
+            <button type="button" class="hx-btn hx-btn-dark" onclick="openApply()">지원하기</button>
+            <button type="button" class="hx-btn hx-btn-darkline" onclick="openInquiry()">문의하기</button>
+          </div>
+          <a class="hx-tel-link" href="tel:0269565323">전화 02-6956-5323</a>
+        </div>
       </div>
   </div>
 </section>
@@ -1372,18 +1633,19 @@ footer {
   <div class="section-inner">
     <div class="section-eyebrow" style="text-align:center">ORGANIZATION</div>
     <h2 class="section-title">조직도</h2>
+    <p class="hx-org-hint">본부와 지점, 직책을 누르면 구성원 소개가 열립니다.</p>
 
     <div style="max-width:860px;margin:0 auto;font-family:'Noto Sans KR',sans-serif;">
 
       <!-- ROOT: 헤리티지금융지사 -->
-      <div style="display:flex;justify-content:center;margin-bottom:24px;">
+      <div class="hx-org-root" style="display:flex;justify-content:center;margin-bottom:24px;">
         <div style="background:var(--gold);color:var(--dark);font-weight:700;font-size:15px;letter-spacing:3px;padding:16px 60px;border:2px solid var(--gold);">
           헤리티지금융지사
         </div>
       </div>
 
       <!-- LEVEL 2+3: 2 Department Cards -->
-      <div style="display:grid;grid-template-columns:2fr 1fr;gap:16px;">
+      <div class="hx-org-grid" style="display:grid;grid-template-columns:2fr 1fr;gap:16px;">
 
         <!-- ① 마스터본부 -->
         <div style="border:1.5px solid var(--gold);background:rgba(184,151,90,0.05);">
@@ -1414,7 +1676,6 @@ footer {
 
       </div>
 
-    </div>
     </div>
   </div>
 </section>
@@ -1553,26 +1814,38 @@ footer {
     <div class="support-item" onclick="openYeongup()" style="cursor:pointer;">
       <div class="support-num">01</div>
       <div class="support-title">헤리티지 영업지원</div>
+      <div class="support-desc">DB 지원과 상담 도구, 정착 지원 제도를 소개합니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openYuksung()" style="cursor:pointer;">
       <div class="support-num">02</div>
       <div class="support-title">헤리티지 육성시스템</div>
+      <div class="support-desc">입문 교육부터 실전 커리큘럼까지의 교육 과정입니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openSoduk()" style="cursor:pointer;">
       <div class="support-num">03</div>
       <div class="support-title">헤리티지 소득비전</div>
+      <div class="support-desc">수수료 구조와 소득이 만들어지는 방식을 설명합니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openPromotion()" style="cursor:pointer;">
       <div class="support-num">04</div>
       <div class="support-title">헤리티지 프로모션</div>
+      <div class="support-desc">시상과 연도대상 등 프로모션 제도를 안내합니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openCareerPath()" style="cursor:pointer;">
       <div class="support-num">05</div>
       <div class="support-title">헤리티지 Career Path</div>
+      <div class="support-desc">관리자와 영업 전문가, 두 가지 성장 경로입니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openWelfare()" style="cursor:pointer;">
       <div class="support-num">06</div>
       <div class="support-title">헤리티지 복지제도</div>
+      <div class="support-desc">휴가와 건강검진 등 복지 제도를 안내합니다.</div>
+      <span class="hx-more-link">자세히 보기</span>
     </div>
   </div>
 </section>
@@ -1599,7 +1872,7 @@ footer {
       </div>
       <div style="background:var(--dark);padding:36px;color:var(--white);">
         <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">TEL</div>
-        <p style="font-size:20px;font-weight:700;color:var(--white);font-family:'Montserrat',sans-serif;">02-6956-5323</p>
+        <p style="font-size:20px;font-weight:700;color:var(--white);font-family:'Montserrat',sans-serif;"><a class="hx-tel-plain" href="tel:0269565323">02-6956-5323</a></p>
       </div>
     </div>
   </div>
@@ -1612,7 +1885,7 @@ footer {
       <span style="font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:22px;font-weight:700;letter-spacing:3px;">HERITAGE<span style="display:block;font-size:13px;font-weight:400;letter-spacing:4px;color:rgba(255,255,255,0.5);">FINANCE</span></span>
       <div class="footer-info">
         <p class="info-highlight">헤리티지 파이낸스</p>
-        <p>대표번호: <span class="info-highlight">02-6956-5323</span></p>
+        <p>대표번호: <a class="info-highlight hx-tel-plain" href="tel:0269565323">02-6956-5323</a></p>
       </div>
     </div>
     <div class="footer-divider"></div>
@@ -1684,8 +1957,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/competitive-5.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="헤리티지 경쟁력 5" loading="lazy" decoding="async">
       <img src="images/competitive-6.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="헤리티지 경쟁력 6" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeHeritage()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeHeritage()">닫기</button>
     </div>
   </div>
 </div>
@@ -1700,13 +1975,15 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <video controls playsinline preload="metadata" id="tourVideo" style="width:100%;border:1px solid rgba(184,151,90,0.15);background:#000;display:block;">
+      <video controls playsinline preload="none" id="tourVideo" style="width:100%;border:1px solid rgba(184,151,90,0.15);background:#000;display:block;">
         <source src="videos/tour.mp4" type="video/mp4">
         브라우저가 동영상 재생을 지원하지 않습니다.
       </video>
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeTour()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeTour()">닫기</button>
     </div>
   </div>
 </div>
@@ -1726,8 +2003,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/sales-support-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 3" loading="lazy" decoding="async">
       <img src="images/sales-support-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 4" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeYeongup()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeYeongup()">닫기</button>
     </div>
   </div>
 </div>
@@ -1750,8 +2029,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/training-6.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 6" loading="lazy" decoding="async">
       <img src="images/training-7.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 7" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeYuksung()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeYuksung()">닫기</button>
     </div>
   </div>
 </div>
@@ -1771,8 +2052,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/income-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 3" loading="lazy" decoding="async">
       <img src="images/income-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 4" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeSoduk()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeSoduk()">닫기</button>
     </div>
   </div>
 </div>
@@ -1792,8 +2075,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/promotion-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 3" loading="lazy" decoding="async">
       <img src="images/promotion-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 4" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closePromotion()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closePromotion()">닫기</button>
     </div>
   </div>
 </div>
@@ -1812,8 +2097,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/career-path-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="Career Path 2" loading="lazy" decoding="async">
       <img src="images/career-path-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="Career Path 3" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeCareerPath()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeCareerPath()">닫기</button>
     </div>
   </div>
 </div>
@@ -1833,8 +2120,10 @@ if (statsEl) observer.observe(statsEl);
       <img src="images/welfare-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 3" loading="lazy" decoding="async">
       <img src="images/welfare-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 4" loading="lazy" decoding="async">
     </div>
-    <div style="text-align:center;margin-top:36px;padding-bottom:20px;">
-      <button onclick="closeWelfare()" style="background:var(--gold);color:var(--dark);border:none;padding:14px 48px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">CLOSE</button>
+    <div class="hx-modal-actions">
+      <button type="button" class="hx-btn hx-btn-gold" onclick="hxGo('apply')">지원하기</button>
+      <button type="button" class="hx-btn hx-btn-line" onclick="hxGo('inquiry')">문의하기</button>
+      <button type="button" class="hx-btn hx-btn-ghost" onclick="closeWelfare()">닫기</button>
     </div>
   </div>
 </div>
@@ -1860,15 +2149,15 @@ if (statsEl) observer.observe(statsEl);
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;">
             <span style="font-size:12px;color:#aaa;">성명 <span style="color:#b8975a;">*</span></span>
-            <input name="inq_name" required placeholder="홍길동" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
+            <input name="inq_name" required autocomplete="name" maxlength="40" placeholder="홍길동" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
           </label>
           <label style="display:flex;flex-direction:column;gap:6px;">
             <span style="font-size:12px;color:#aaa;">연락처 <span style="color:#b8975a;">*</span></span>
-            <input name="inq_phone" required placeholder="010-0000-0000" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
+            <input name="inq_phone" required type="tel" inputmode="tel" autocomplete="tel" maxlength="20" pattern="[0-9+ \-]{9,15}" title="숫자와 하이픈(-)으로 9자리 이상 입력해 주세요" placeholder="010-0000-0000" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
           </label>
           <label style="display:flex;flex-direction:column;gap:6px;">
             <span style="font-size:12px;color:#aaa;">이메일</span>
-            <input name="inq_email" type="email" placeholder="example@email.com" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
+            <input name="inq_email" type="email" autocomplete="email" placeholder="example@email.com" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;">
           </label>
           <label style="display:flex;flex-direction:column;gap:6px;">
             <span style="font-size:12px;color:#aaa;">연락 가능 시간</span>
@@ -1916,13 +2205,27 @@ if (statsEl) observer.observe(statsEl);
         </div>
       </div>
 
+      <!-- 개인정보 수집·이용 동의 -->
+      <div class="hx-consent">
+        <label class="hx-check"><input type="checkbox" required><span>개인정보 수집·이용에 동의합니다 <em>(필수)</em></span></label>
+        <details>
+          <summary>수집·이용 내용 보기</summary>
+          <dl>
+            <dt>수집 항목</dt><dd>성명, 연락처, 이메일 등 문의서에 직접 입력하신 정보</dd>
+            <dt>이용 목적</dt><dd>문의 확인 및 답변 연락</dd>
+            <dt>보유 기간</dt><dd>이용 목적을 달성할 때까지 보관하며, 삭제를 요청하시면 지체 없이 파기합니다.</dd>
+          </dl>
+          <p class="hx-consent-foot">동의하지 않으실 수 있으며, 그 경우 접수가 어렵습니다. 문의: 헤리티지 금융지사 02-6956-5323</p>
+        </details>
+      </div>
+
       <!-- 결과 메시지 -->
-      <div id="inquiryResult" style="display:none;text-align:center;padding:16px;border:1px solid #b8975a;color:#b8975a;font-size:14px;"></div>
+      <div id="inquiryResult" role="status" aria-live="polite" style="display:none;text-align:center;padding:16px;border:1px solid #b8975a;color:#b8975a;font-size:14px;"></div>
 
       <!-- 제출 버튼 -->
       <div style="text-align:center;">
         <button type="submit" id="inquirySubmitBtn" style="background:#b8975a;color:#111;border:none;padding:16px 60px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">문의 제출하기</button>
-        <p style="color:#555;font-size:11px;margin-top:12px;">제출 후 담당자가 확인하여 연락드립니다</p>
+        <p class="hx-hint">제출 후 담당자가 확인하여 연락드립니다</p>
       </div>
 
     </form>
@@ -1944,17 +2247,30 @@ if (statsEl) observer.observe(statsEl);
 
     <form id="applyForm" style="display:flex;flex-direction:column;gap:32px;">
 
+      <!-- 먼저 받는 항목 -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">먼저 이것만 남겨 주세요</h3>
+        <p class="hx-form-note">성명과 연락처만 남기셔도 접수됩니다. 담당자가 확인한 뒤 연락드립니다.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성명(한글) *</span><input name="name_kr" required autocomplete="name" maxlength="40" placeholder="홍길동" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;border-radius:2px;"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">연락처 *</span><input name="phone" required type="tel" inputmode="tel" autocomplete="tel" maxlength="20" pattern="[0-9+ \-]{9,15}" title="숫자와 하이픈(-)으로 9자리 이상 입력해 주세요" placeholder="010-0000-0000" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;border-radius:2px;"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;"><span style="font-size:12px;color:#aaa;">보험업 경력 여부</span><select name="insurance_exp" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>있음</option><option>없음</option></select></label>
+        </div>
+      </div>
+
+      <!-- 상세 지원서 (선택) -->
+      <details class="hx-more" id="applyMore">
+        <summary><span>상세 지원서 작성 (선택)<small>인적사항, 학력, 경력, 자기소개를 미리 적어 두실 수 있습니다.</small></span></summary>
+        <div class="hx-more-body">
       <!-- ① 기본인적사항 -->
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">기본인적사항</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성명(한글) *</span><input name="name_kr" required placeholder="홍길동" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;border-radius:2px;"></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성명(영문)</span><input name="name_en" placeholder="Hong Gil Dong" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;border-radius:2px;"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">생년월일 *</span><input name="birth" required type="date" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성별 *</span><select name="gender" required style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>남</option><option>여</option></select></label>
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">연락처 *</span><input name="phone" required placeholder="010-0000-0000" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">이메일 *</span><input name="email" required type="email" placeholder="example@email.com" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;"><span style="font-size:12px;color:#aaa;">주소</span><input name="address" placeholder="현재 거주지 주소" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">생년월일</span><input name="birth" type="date" autocomplete="bday" min="1930-01-01" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성별</span><select name="gender" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>남</option><option>여</option></select></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">이메일</span><input name="email" type="email" autocomplete="email" placeholder="example@email.com" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;"><span style="font-size:12px;color:#aaa;">주소</span><input name="address" autocomplete="street-address" placeholder="현재 거주지 주소" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">결혼여부</span><select name="married" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>미혼</option><option>기혼</option></select></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">차량소지</span><select name="car" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>유</option><option>무</option></select></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">병역사항</span><select name="military" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>해당없음</option><option>군필</option><option>미필</option><option>면제</option></select></label>
@@ -1981,7 +2297,7 @@ if (statsEl) observer.observe(statsEl);
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">학력사항</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
-          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">최종학력 *</span><select name="edu_level" required style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>고졸</option><option>전문대졸</option><option>대졸</option><option>대학원졸</option></select></label>
+          <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">최종학력</span><select name="edu_level" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>고졸</option><option>전문대졸</option><option>대졸</option><option>대학원졸</option></select></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">학교명</span><input name="school" placeholder="OO대학교" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">전공</span><input name="major" placeholder="경영학" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
         </div>
@@ -1997,7 +2313,6 @@ if (statsEl) observer.observe(statsEl);
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">연봉 (만원)</span><input name="salary" placeholder="4000" type="number" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">근무기간 시작</span><input name="career_start" type="date" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">근무기간 종료</span><input name="career_end" type="date" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;"><span style="font-size:12px;color:#aaa;">보험업 경력 여부</span><select name="insurance_exp" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>있음</option><option>없음</option></select></label>
         </div>
       </div>
 
@@ -2023,14 +2338,30 @@ if (statsEl) observer.observe(statsEl);
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">3. 지원 동기 및 향후 Vision</span><textarea name="intro3" rows="4" placeholder="헤리티지파이낸스를 선택한 이유와 목표를 작성해 주세요" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;resize:vertical;font-family:'Noto Sans KR',sans-serif;line-height:1.7;"></textarea></label>
         </div>
       </div>
+        </div>
+      </details>
+
+      <!-- 개인정보 수집·이용 동의 -->
+      <div class="hx-consent">
+        <label class="hx-check"><input type="checkbox" required><span>개인정보 수집·이용에 동의합니다 <em>(필수)</em></span></label>
+        <details>
+          <summary>수집·이용 내용 보기</summary>
+          <dl>
+            <dt>수집 항목</dt><dd>성명, 연락처 등 지원서에 직접 입력하신 정보</dd>
+            <dt>이용 목적</dt><dd>입사 지원 검토 및 상담 연락</dd>
+            <dt>보유 기간</dt><dd>이용 목적을 달성할 때까지 보관하며, 삭제를 요청하시면 지체 없이 파기합니다.</dd>
+          </dl>
+          <p class="hx-consent-foot">동의하지 않으실 수 있으며, 그 경우 접수가 어렵습니다. 문의: 헤리티지 금융지사 02-6956-5323</p>
+        </details>
+      </div>
 
       <!-- 결과 메시지 -->
-      <div id="applyResult" style="display:none;text-align:center;padding:16px;border:1px solid #b8975a;color:#b8975a;font-size:14px;"></div>
+      <div id="applyResult" role="status" aria-live="polite" style="display:none;text-align:center;padding:16px;border:1px solid #b8975a;color:#b8975a;font-size:14px;"></div>
 
       <!-- 제출 버튼 -->
       <div style="text-align:center;">
         <button type="submit" id="applySubmitBtn" style="background:#b8975a;color:#111;border:none;padding:16px 60px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;cursor:pointer;text-transform:uppercase;">지원서 제출하기</button>
-        <p style="color:#555;font-size:11px;margin-top:12px;">제출 후 담당자가 검토하여 연락드립니다</p>
+        <p class="hx-hint">제출 후 담당자가 검토하여 연락드립니다</p>
       </div>
 
     </form>
@@ -2268,22 +2599,24 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(function(r) { return r.json(); })
       .then(function(res) {
         resultEl.style.display = 'block';
+        resultEl.scrollIntoView({ block: 'center' });
         if (res.success) {
           resultEl.style.borderColor = '#b8975a';
           resultEl.style.color = '#b8975a';
-          resultEl.textContent = '✓ 문의가 성공적으로 접수되었습니다. 접수번호: ' + (res.inquiryNo || '');
+          resultEl.textContent = '문의가 접수되었습니다. 접수번호: ' + (res.inquiryNo || '') + ' · 담당자가 확인한 뒤 남겨 주신 연락처로 연락드립니다.';
           inquiryForm.reset();
-          btn.textContent = '제출완료';
+          btn.textContent = '제출 완료';
         } else {
           resultEl.style.borderColor = '#e05';
           resultEl.style.color = '#e05';
-          resultEl.textContent = '오류: ' + (res.message || '제출 실패');
+          resultEl.textContent = '접수하지 못했습니다. ' + (res.message ? res.message + ' ' : '') + '잠시 후 다시 시도하시거나 대표번호(02-6956-5323)로 연락해 주세요.';
           btn.disabled = false;
           btn.textContent = '문의 제출하기';
         }
       })
       .catch(function() {
         resultEl.style.display = 'block';
+        resultEl.scrollIntoView({ block: 'center' });
         resultEl.style.borderColor = '#e05';
         resultEl.style.color = '#e05';
         resultEl.textContent = '네트워크 오류가 발생했습니다. 대표번호(02-6956-5323)로 문의해 주세요.';
@@ -2301,7 +2634,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var btn = document.getElementById('applySubmitBtn');
       var resultEl = document.getElementById('applyResult');
       btn.disabled = true;
-      btn.textContent = '제출완료 된 후 창을 닫으세요';
+      btn.textContent = '제출 중...';
 
       var data = {};
       new FormData(form).forEach(function(v, k) { data[k] = v; });
@@ -2338,21 +2671,25 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(function(r) { return r.json(); })
       .then(function(res) {
         resultEl.style.display = 'block';
+        resultEl.scrollIntoView({ block: 'center' });
         if (res.success) {
           resultEl.style.borderColor = '#b8975a';
           resultEl.style.color = '#b8975a';
-          resultEl.textContent = '✓ 지원서가 성공적으로 제출되었습니다. 접수번호: ' + (res.applyNo || '');
+          resultEl.textContent = '지원서가 접수되었습니다. 접수번호: ' + (res.applyNo || '') + ' · 담당자가 확인한 뒤 남겨 주신 연락처로 연락드립니다.';
           form.reset();
+          var more = document.getElementById('applyMore'); if (more) more.open = false;
+          btn.textContent = '제출 완료';
         } else {
           resultEl.style.borderColor = '#e05';
           resultEl.style.color = '#e05';
-          resultEl.textContent = '오류: ' + (res.message || '제출 실패');
+          resultEl.textContent = '접수하지 못했습니다. ' + (res.message ? res.message + ' ' : '') + '잠시 후 다시 시도하시거나 대표번호(02-6956-5323)로 연락해 주세요.';
           btn.disabled = false;
           btn.textContent = '지원서 제출하기';
         }
       })
       .catch(function() {
         resultEl.style.display = 'block';
+        resultEl.scrollIntoView({ block: 'center' });
         resultEl.style.borderColor = '#e05';
         resultEl.style.color = '#e05';
         resultEl.textContent = '네트워크 오류가 발생했습니다. 대표번호(02-6956-5323)로 문의해 주세요.';
@@ -2362,6 +2699,213 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+</script>
+
+<!-- 모바일 하단 고정 바 -->
+<div class="hx-bar" role="navigation" aria-label="빠른 지원">
+  <button type="button" class="hx-btn hx-btn-gold" onclick="openApply()">지원하기</button>
+  <button type="button" class="hx-btn hx-btn-line" onclick="openInquiry()">문의하기</button>
+  <a class="hx-btn hx-btn-ghost" href="tel:0269565323">전화</a>
+</div>
+
+<script>
+// ── 공통: 모달 전환, 키보드 접근, Esc·배경 클릭·뒤로가기로 닫기 ──
+var HX_MODALS = {
+  heritageModal: closeHeritage, tourModal: closeTour, yeongupModal: closeYeongup, yuksungModal: closeYuksung,
+  sodukModal: closeSoduk, promotionModal: closePromotion, careerPathModal: closeCareerPath, welfareModal: closeWelfare,
+  inquiryModal: closeInquiry, applyModal: closeApply,
+  josieonModal: closeJosieon, taegonModal: closeTaegon, dongjunModal: closeDongjun, jinhaModal: closeJinha
+};
+function hxOpenModals() {
+  return Object.keys(HX_MODALS).filter(function(id) {
+    var el = document.getElementById(id);
+    return el && el.style.display === 'block';
+  });
+}
+function hxCloseAll() {
+  hxOpenModals().forEach(function(id) { HX_MODALS[id](); });
+}
+function hxGo(which) {
+  hxCloseAll();
+  if (which === 'apply') openApply(); else openInquiry();
+}
+
+(function() {
+  var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, video[controls], [tabindex]:not([tabindex="-1"])';
+  var lastFocus = null;
+  var ignorePop = false;
+
+  // 1) div로 만든 누르는 요소를 키보드로 쓸 수 있게
+  document.querySelectorAll('.support-item, .hx-org-grid [onclick], .mobile-drawer-top').forEach(function(el) {
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    if (el.classList.contains('mobile-drawer-top')) el.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('keydown', function(e) {
+    var t = e.target;
+    if ((e.key === 'Enter' || e.key === ' ') && t.getAttribute && t.getAttribute('role') === 'button' && t.tagName !== 'BUTTON') {
+      e.preventDefault();
+      t.click();
+    }
+  });
+  document.querySelectorAll('.mobile-drawer-top').forEach(function(top) {
+    new MutationObserver(function() {
+      top.setAttribute('aria-expanded', top.classList.contains('active') ? 'true' : 'false');
+    }).observe(top, { attributes: true, attributeFilter: ['class'] });
+  });
+
+  // 2) PC 상단 메뉴: 클릭으로도 열림
+  document.querySelectorAll('.nav-links > li > a[href="#"]').forEach(function(a) {
+    var li = a.parentElement;
+    a.setAttribute('aria-haspopup', 'true');
+    a.setAttribute('aria-expanded', 'false');
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var open = !li.classList.contains('hx-open');
+      document.querySelectorAll('.nav-links > li.hx-open').forEach(function(o) {
+        o.classList.remove('hx-open');
+        o.firstElementChild.setAttribute('aria-expanded', 'false');
+      });
+      li.classList.toggle('hx-open', open);
+      a.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest || e.target.closest('.nav-links > li')) return;
+    document.querySelectorAll('.nav-links > li.hx-open').forEach(function(o) {
+      o.classList.remove('hx-open');
+      o.firstElementChild.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // 3) 햄버거 메뉴 상태 알림
+  var drawer = document.getElementById('mobileDrawer');
+  var burger = document.getElementById('hamburger');
+  if (drawer && burger) {
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-controls', 'mobileDrawer');
+    new MutationObserver(function() {
+      burger.setAttribute('aria-expanded', drawer.classList.contains('open') ? 'true' : 'false');
+    }).observe(drawer, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  // 4) 모달: 대화상자 역할, 포커스 이동·복귀, 뒤로가기
+  Object.keys(HX_MODALS).forEach(function(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    var title = modal.querySelector('h2');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    if (title) {
+      if (!title.id) title.id = id + 'Title';
+      modal.setAttribute('aria-labelledby', title.id);
+    }
+    var x = modal.querySelector('button');
+    if (x && x.textContent.trim() === '✕') {
+      x.setAttribute('aria-label', '닫기');
+      x.classList.add('hx-x');
+    }
+    // 이미지 모달: 폰에서 눌러서 크게 보기
+    var imgs = modal.querySelectorAll('img[loading="lazy"]');
+    if (imgs.length && id !== 'tourModal') {
+      imgs[0].parentElement.classList.add('hx-zoomwrap');
+      var hint = document.createElement('p');
+      hint.className = 'hx-zoom-hint';
+      hint.textContent = '이미지를 누르면 크게 볼 수 있습니다.';
+      imgs[0].parentElement.parentElement.insertBefore(hint, imgs[0].parentElement);
+      imgs[0].parentElement.addEventListener('click', function(e) {
+        if (e.target.tagName !== 'IMG' || window.innerWidth > 768) return;
+        var on = e.target.classList.toggle('hx-zoom');
+        if (on) e.target.scrollIntoView({ block: 'nearest', inline: 'start' });
+      });
+    }
+    // 배경을 눌러 닫기 (입력 중인 폼 모달은 제외)
+    if (id !== 'applyModal' && id !== 'inquiryModal') {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal || e.target === modal.firstElementChild) HX_MODALS[id]();
+      });
+    }
+    var wasOpen = false;
+    new MutationObserver(function() {
+      var isOpen = modal.style.display === 'block';
+      if (isOpen === wasOpen) return;
+      wasOpen = isOpen;
+      if (isOpen) {
+        if (!lastFocus || !modal.contains(document.activeElement)) {
+          if (document.activeElement && document.activeElement !== document.body && !document.activeElement.closest('[role="dialog"]')) {
+            lastFocus = document.activeElement;
+          }
+        }
+        modal.scrollTop = 0;
+        var first = modal.querySelector('.hx-x') || modal.querySelector(FOCUSABLE);
+        if (first) first.focus({ preventScroll: true });
+        try {
+          if (history.state && history.state.hx) history.replaceState({ hx: id }, '');
+          else history.pushState({ hx: id }, '');
+        } catch (err) {}
+      } else {
+        setTimeout(function() {
+          if (hxOpenModals().length) return;
+          if (lastFocus && document.contains(lastFocus)) { lastFocus.focus({ preventScroll: true }); }
+          lastFocus = null;
+          try {
+            if (history.state && history.state.hx) { ignorePop = true; history.back(); }
+          } catch (err) {}
+        }, 60);
+      }
+    }).observe(modal, { attributes: true, attributeFilter: ['style'] });
+  });
+  window.addEventListener('popstate', function() {
+    if (ignorePop) { ignorePop = false; return; }
+    hxCloseAll();
+  });
+
+  // 5) Esc로 닫기, Tab은 열린 모달 안에서만 이동
+  document.addEventListener('keydown', function(e) {
+    var open = hxOpenModals();
+    if (e.key === 'Escape') {
+      if (open.length) { e.preventDefault(); hxCloseAll(); return; }
+      if (drawer && drawer.classList.contains('open')) { closeDrawer(); burger.focus(); }
+      document.querySelectorAll('.nav-links > li.hx-open').forEach(function(o) { o.classList.remove('hx-open'); });
+      return;
+    }
+    if (e.key !== 'Tab' || !open.length) return;
+    var modal = document.getElementById(open[open.length - 1]);
+    var items = Array.prototype.filter.call(modal.querySelectorAll(FOCUSABLE), function(el) {
+      return el.offsetParent !== null || el === document.activeElement;
+    });
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (!modal.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  // 하단 고정 바: 첫 화면의 버튼이 보이는 동안에는 숨김
+  var bar = document.querySelector('.hx-bar');
+  var heroCta = document.querySelector('.hero .hx-cta');
+  if (bar && heroCta && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      bar.classList.toggle('hx-bar-on', !entries[0].isIntersecting);
+    }).observe(heroCta);
+  } else if (bar) {
+    bar.classList.add('hx-bar-on');
+  }
+
+  // 6) 지원서: 생년월일 상한, 닫힌 상세 영역의 오류는 펼쳐서 보여 주기
+  var birth = document.querySelector('#applyForm input[name="birth"]');
+  if (birth) {
+    var d = new Date();
+    birth.max = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  var applyForm = document.getElementById('applyForm');
+  var more = document.getElementById('applyMore');
+  if (applyForm && more) {
+    applyForm.addEventListener('invalid', function(e) {
+      if (more.contains(e.target)) more.open = true;
+    }, true);
+  }
+})();
 </script>
 </body>
 </html>
