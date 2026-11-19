@@ -1217,6 +1217,7 @@ p[style*="font-size:10px"], div[style*="font-size:10px"], span[style*="font-size
 .hx-modal-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 36px; padding-bottom: 20px; }
 .hx-x { min-width: 44px; min-height: 44px; }
 .hx-zoom-hint { display: none; }
+picture { display: block; }
 
 /* 지원서: 먼저 받는 항목 + 접힌 상세 */
 .hx-form-note { font-size: 13px; line-height: 1.8; color: #bdbdbd; margin: -4px 0 18px; }
@@ -1785,7 +1786,7 @@ p[style*="font-size:10px"], div[style*="font-size:10px"], span[style*="font-size
     <div class="support-item" onclick="openPromotion()" style="cursor:pointer;">
       <div class="support-num">04</div>
       <div class="support-title">헤리티지 프로모션</div>
-      <div class="support-desc">시상과 연도대상 등 프로모션 제도를 안내합니다.</div>
+      <div class="support-desc">루키 보너스, 성장 지원금, 리크루팅 보너스와 시상 제도입니다.</div>
       <span class="hx-more-link">자세히 보기</span>
     </div>
     <div class="support-item" onclick="openCareerPath()" style="cursor:pointer;">
@@ -1951,10 +1952,11 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/sales-support-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 1" loading="lazy" decoding="async">
-      <img src="images/sales-support-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 2" loading="lazy" decoding="async">
-      <img src="images/sales-support-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 3" loading="lazy" decoding="async">
-      <img src="images/sales-support-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="영업지원 4" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/sales-support-1-m.jpg" width="1080" height="1350"><img src="images/sales-support-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="헤리티지는 지사가 직접 DB를 만들어 정기적으로 지원합니다. 재무설계 DB, 보장분석 DB, 숨은 보험금 찾기 DB. DB 구매 비용 부담이 없고, 계약이 되면 나누는 방식이라 바로 쓸 수 있습니다. DB 배분과 진행 관리는 데이터 PRO 프로그램으로 합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/sales-support-2-m.jpg" width="1080" height="1350"><img src="images/sales-support-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="선배와 함께 가는 조인트 워크. 경험 많은 전담 관리자와 선배가 미팅 준비, 상담 동행, 계약까지 함께합니다. 발생한 수당은 투명하게 나누고, 현장 선배의 실전 노하우를 직접 배웁니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/sales-support-3-m.jpg" width="1080" height="1350"><img src="images/sales-support-3.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="플랫폼 DB도 준비하고 있습니다. 신채널 차원에서 군인 가족, 아파트 입주민, 육아 가정 플랫폼 DB를 준비하고 있습니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/sales-support-4-m.jpg" width="1080" height="1350"><img src="images/sales-support-4.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="상담을 돕는 헤리티지 자체 프로그램. 헤리티지 보장분석은 기존 보험을 AI로 분석하고 리모델링 제안서를 자동으로 만들고, 헤리티지 재무는 클릭 한 번으로 맞춤형 재무설계 포트폴리오를 만들며, 헤리티지 프로는 발생 수수료와 유지 수수료를 실시간으로 확인합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/sales-support-5-m.jpg" width="1080" height="1350"><img src="images/sales-support-5.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="FC 정착을 위한 지원과 제도. 전문 관리자 B.M이 신인 입과 전부터 1년간 밀착 전담 코칭을 하며 전산과 원수사 교육, 청약 프로세스 동행, 상품 라인업과 보장분석 교육, 고객관리 프로세스 코칭을 지원합니다. FC 익월 소득 수준 1,000퍼센트. 신인 정착 지원은 설계사 시험 합격 시 100만 원, 1차월 환산 30만 원 이상 시 100만 원, 2에서 6차월 환산의 100퍼센트 익월 지급. 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closeYeongup()">닫기</button>
@@ -1972,13 +1974,13 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/training-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 1" loading="lazy" decoding="async">
-      <img src="images/training-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 2" loading="lazy" decoding="async">
-      <img src="images/training-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 3" loading="lazy" decoding="async">
-      <img src="images/training-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 4" loading="lazy" decoding="async">
-      <img src="images/training-5.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 5" loading="lazy" decoding="async">
-      <img src="images/training-6.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 6" loading="lazy" decoding="async">
-      <img src="images/training-7.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="육성시스템 7" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/training-1-m.jpg" width="1080" height="1350"><img src="images/training-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="헤리티지의 특별한 육성 시스템. 교육 현장 사진 세 장. 모든 FC를 똑같이 육성하는 것은 모순입니다. 헤리티지의 육성 시스템은 맞춤식 교육을 제공하며 AI 재무설계, AI 보장분석, 실시간 소득 관리, DB 프로그램이 성장을 돕습니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-2-m.jpg" width="1080" height="1350"><img src="images/training-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="신채널 본사 교육 5일 과정. 1일차 회사와 시장, 2일차 세일즈 프로세스, 3일차 시장 개발과 목표 설정, 4일차 DB 시장과 AI 보장분석, 5일차 상품 라인업과 실습." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-3-m.jpg" width="1080" height="1350"><img src="images/training-3.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="지사 신입 교육 4주 과정. 1주차 회사와 지사 소개, 수당 체계, 업계 비전과 설계사 시험 준비. 2주차 보험 기초, 지인 영업, DB 영업, 데이터 PRO와 비즈메모 사용법, 생명보험 설계사 시험. 3주차 전산 교육(카스, 헤리티지 프로, 지사 클라우드, 베스트카 다이렉트 앱), 보장분석(AI 자동 보장분석, 오케이 마이보험), 재무설계(헤리티지 재무), 손해보험 설계사 시험. 4주차 RP 교육(십자 RP, 달러종 RP, 변액 RP)과 거절 처리 교육. RP와 거절 처리 실전 테스트 후 수료." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-4-m.jpg" width="1080" height="1350"><img src="images/training-4.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="교육이 끝난 뒤에도 12개월 동안 담당 관리자가 밀착 관리를 합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-5-m.jpg" width="1080" height="1350"><img src="images/training-5.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="매일 아침 Daily 교육. 매일 9시 원수사별 핵심 상품과 판매 전략 교육, 매일 10시 실전 영업 사례 공유와 동기부여, 금융·경제·보장성 심화 학습, 매주 수요일 3-Step 전문가 커리큘럼. 모든 교육은 LIVE로 온라인 참여가 가능합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-6-m.jpg" width="1080" height="1350"><img src="images/training-6.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="매주 수요일 3-Step 전문가 커리큘럼. 1단계 종합 재무설계 전문가, 2단계 보장분석 전문가, 3단계 WM 영업 전문가." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/training-7-m.jpg" width="1080" height="1350"><img src="images/training-7.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="나에게 맞는 영업 시장과 방향을 찾아 집중 육성합니다. 이관 고객, DB 고객, Joint Work, 주변 인맥, 소개 마케팅, 동호회 시장, SNS 시장, 재테크 박람회, 제휴 마케팅, 세미나 시장, 개척 시장." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closeYuksung()">닫기</button>
@@ -1996,10 +1998,11 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
        <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/income-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 1" loading="lazy" decoding="async">
-      <img src="images/income-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 2" loading="lazy" decoding="async">
-      <img src="images/income-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 3" loading="lazy" decoding="async">
-      <img src="images/income-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="소득비전 4" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/income-1-m.jpg" width="1080" height="1350"><img src="images/income-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="수익 배분 비교. 일반 지사는 회사 몫과 지사 몫을 떼고 남은 것이 FC 몫입니다. 직영인 헤리티지는 회사 몫과 FC 몫으로 나뉘며 FC 몫이 80에서 88퍼센트입니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/income-2-m.jpg" width="1080" height="1350"><img src="images/income-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="한국보험금융 수수료 지급 비율 92.85퍼센트, 2025년 공시 자료 기준." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/income-3-m.jpg" width="1080" height="1350"><img src="images/income-3.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="회사에서 수수료를 많이 줘도 중간에서 가져가면 의미가 없습니다. 헤리티지는 중간 몫을 최소화해 FC 몫을 키웠고, 환수도 원수사 환수율을 그대로 적용합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/income-4-m.jpg" width="1080" height="1350"><img src="images/income-4.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="직영은 한국보험금융 본사가 FC에게 수수료를 직접 지급합니다. 약속된 날짜에 정확하게." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/income-5-m.jpg" width="1080" height="1350"><img src="images/income-5.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="수수료 제도가 분급으로 바뀝니다. 2027년부터 4년 분급, 2029년부터 7년 분급. 수수료가 몇 년에 걸쳐 나뉘어 들어오므로 끝까지 줄 수 있는 튼튼한 GA가 중요합니다." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closeSoduk()">닫기</button>
@@ -2017,10 +2020,13 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/promotion-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 1" loading="lazy" decoding="async">
-      <img src="images/promotion-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 2" loading="lazy" decoding="async">
-      <img src="images/promotion-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 3" loading="lazy" decoding="async">
-      <img src="images/promotion-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="프로모션 4" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-1-m.jpg" width="1080" height="1350"><img src="images/promotion-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="루키 보너스. 등록 축하금 100만 원, 첫 달 환산 실적 30만 원 이상이면 100만 원 추가, 2에서 6차월에는 환산 실적의 100퍼센트를 활동 지원비로 지원합니다. 지급 기준은 회사 규정에 따르고 실적에 따라 달라지며 소득을 보장한다는 뜻은 아닙니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-2-m.jpg" width="1080" height="1350"><img src="images/promotion-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="루키 보너스 대상과 예시. 무경력 신인 대상으로 기준은 3년 내 무경력 또는 3년 내 신계약 없음. 등록시험 합격 10만 원 더하기 10만 원, 등록 축하금 100만 원, 등록 당월 환산 30만 원 이상 시 추가 인센티브 100만 원, 등록 2에서 6차월 활동 지원 환산의 100퍼센트. 손보 기준 등록 당월 환산 30만 원 예시: 등록 축하금 100만 원, 합격 인센티브 20만 원, 등록 인센티브 100만 원, 수수료 250만 원, 13회 유지·시책비 300만 원, 총 800만 원(익월 500만 원, 13회차 300만 원). 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-3-m.jpg" width="1080" height="1350"><img src="images/promotion-3.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="장기 근속 성장 지원금. 1년 동안 체결한 총 보험료의 100퍼센트를 적립해 15차월부터 매달 지급하며, 근속하는 동안 계속 이어집니다. 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-4-m.jpg" width="1080" height="1350"><img src="images/promotion-4.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="리크루팅 보너스. 내가 소개한 FC 환산 실적의 20퍼센트를 3년간 드립니다. 환산 50만 원 기준으로 입사 FC 1명이면 10만 원, 5명이면 50만 원, 10명이면 100만 원. 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-5-m.jpg" width="1080" height="1350"><img src="images/promotion-5.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="월간 지사 MVP. 매월 환산 실적, 총 수수료, 계약 건수 순위를 지사 안에서 투명하게 공개하고, 지사 종합 실적 1위에게 소정의 선물과 MVP의 프라이드를 드립니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-6-m.jpg" width="1080" height="1350"><img src="images/promotion-6.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="천만 클럽과 명인 클럽. 천만 클럽은 익월 소득 1천만 원 이상 달성자를 식사에 초대합니다. 명인 클럽은 환산 100만 원 이상 또는 3W 4주 달성자에게 이달의 우수사원 상장을 수여하고 식사에 초대합니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/promotion-7-m.jpg" width="1080" height="1350"><img src="images/promotion-7.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="한국보험금융 직영 연도대상. 챔피언 1위 1,000만 원, 2위 500만 원, 3위 300만 원, Platinum 4에서 10위 200만 원, Gold 11에서 30위 150만 원, Silver 31에서 40위 100만 원, Bronze 41에서 50위 50만 원. 전 등급 해외여행 지원, 상패와 상장, 마케팅 임원 선발 우대. 특별상은 리크루팅과 3W 대상 10명에게 20만 원과 상장, 상패. 평가 기간 직전 1년, 선발 인원 50명(특별상 포함 총 60명), 선발 기준 환산월초 절대액 80점과 리크루팅 20점, 유지율과 불완전판매 실적 조정 적용." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closePromotion()">닫기</button>
@@ -2038,9 +2044,8 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/career-path-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="Career Path 1" loading="lazy" decoding="async">
-      <img src="images/career-path-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="Career Path 2" loading="lazy" decoding="async">
-      <img src="images/career-path-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="Career Path 3" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/career-path-1-m.jpg" width="1080" height="1350"><img src="images/career-path-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="관리자의 길. FC에서 시작해 2명 도입 시 지점장 후보자, 4명 수석 지점장, 8명 사업단장, 12명 본부장. 관리자 수수료 지급, 관리자 전용 사원증과 명함 제공, 관리자 공간 제공." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/career-path-2-m.jpg" width="1080" height="1350"><img src="images/career-path-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="영업 전문가의 길, 마케팅 임원 제도. 명인(월 100만 이상): 통신비 월 3만, 건강검진 A, 상조 지원. 이사(월 200만 이상): 임원지원금 100만, 품위유지비 월 20만, 통신비 월 5만, 건강검진 C, 상조 지원. 상무(월 400만 이상): 임원지원금 200만, 품위유지비 월 50만, 통신비 월 7만, 건강검진 C, 상조 지원. 전무(월 800만 이상): 임원지원금 400만, 품위유지비 월 100만, 통신비 월 10만, 건강검진 C, 상조 지원. 부사장(월 1,000만 이상): 임원지원금 1,000만, 품위유지비 월 100만, 통신비 월 10만, 건강검진 C, 상조 지원." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closeCareerPath()">닫기</button>
@@ -2058,10 +2063,9 @@ if (statsEl) observer.observe(statsEl);
       <div style="width:50px;height:1px;background:var(--gold);margin:16px auto 0;"></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;">
-      <img src="images/welfare-1.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 1" loading="lazy" decoding="async">
-      <img src="images/welfare-2.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 2" loading="lazy" decoding="async">
-      <img src="images/welfare-3.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 3" loading="lazy" decoding="async">
-      <img src="images/welfare-4.jpg" style="width:100%;border:1px solid rgba(184,151,90,0.15);" alt="복지제도 4" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 768px)" srcset="images/welfare-1-m.jpg" width="1080" height="1350"><img src="images/welfare-1.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="복지제도. 헤리티지가 보장하는 재충전 시간. 정기 휴가 총 7일(사전 조율), 프리데이 매월 하루(사용 전날 22시까지 연락 필수). 건강검진과 경조사 지원도 있습니다." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/welfare-2-m.jpg" width="1080" height="1350"><img src="images/welfare-2.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="KMI 건강검진 프리미엄 지원. A형은 실동 인원 기준, 월초 10만 달성 시 자기부담금 25만, 검진 규모 60만 원 상당. B형은 환산 50만 이상, 월초 50만 달성 시 자기부담금 17.5만, 검진 규모 110만 원 상당. C형은 환산 100만 이상, 월초 100만 달성 시 자기부담금 0원 전액 지원, 검진 규모 160만 원 상당." loading="lazy" decoding="async"></picture>
+      <picture><source media="(max-width: 768px)" srcset="images/welfare-3-m.jpg" width="1080" height="1350"><img src="images/welfare-3.jpg" width="1600" height="900" style="width:100%;height:auto;display:block;border:1px solid rgba(184,151,90,0.15);" alt="삶의 모든 순간을 함께. 직영만의 복리후생 지원(삼우라이프 제휴). 경조수당은 본인·자녀 결혼 20만 원, 본인·배우자·자녀·부모 조의 20만 원 지급. 장례용품은 20만 원 상당 현물 지원으로 일회용품 200인분 또는 유가족 고급 편의용품 중 택 1. 월 환산 30만 이상은 경조수당과 장례용품 모두, 30만 이하는 장례용품 단독 지원." loading="lazy" decoding="async"></picture>
     </div>
     <div class="hx-modal-actions">
       <button type="button" class="hx-btn hx-btn-gold" onclick="closeWelfare()">닫기</button>
@@ -2749,12 +2753,13 @@ function hxGo(which) {
     // 이미지 모달: 폰에서 눌러서 크게 보기
     var imgs = modal.querySelectorAll('img[loading="lazy"]');
     if (imgs.length && id !== 'tourModal') {
-      imgs[0].parentElement.classList.add('hx-zoomwrap');
+      var wrap = imgs[0].closest('div');
+      wrap.classList.add('hx-zoomwrap');
       var hint = document.createElement('p');
       hint.className = 'hx-zoom-hint';
       hint.textContent = '이미지를 누르면 크게 볼 수 있습니다.';
-      imgs[0].parentElement.parentElement.insertBefore(hint, imgs[0].parentElement);
-      imgs[0].parentElement.addEventListener('click', function(e) {
+      wrap.parentElement.insertBefore(hint, wrap);
+      wrap.addEventListener('click', function(e) {
         if (e.target.tagName !== 'IMG' || window.innerWidth > 768) return;
         var on = e.target.classList.toggle('hx-zoom');
         if (on) e.target.scrollIntoView({ block: 'nearest', inline: 'start' });
