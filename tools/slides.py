@@ -26,7 +26,9 @@ h1{font-size:var(--t);font-weight:700;line-height:1.28;letter-spacing:-.01em}
 h1 em{font-style:normal;color:#d4b483}
 h1::after{content:'';display:block;width:calc(var(--t)*1.5);height:3px;background:#b8975a;margin-top:calc(var(--t)*.38)}
 .sub{font-size:var(--s);color:#bdbdbd;margin-top:calc(var(--s)*.9);line-height:1.5}
-h1{flex:none;margin-bottom:22px}
+h1{flex:none;margin-bottom:22px;white-space:nowrap}
+h1.two{white-space:normal;text-wrap:balance}
+p,li,h3,.node small,.cell small,.row span small{text-wrap:balance}
 .content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--gap);min-height:0}
 .mark{position:absolute;right:var(--pad);bottom:calc(var(--pad)*.42);font-family:'Montserrat',sans-serif;font-weight:600;font-size:calc(var(--s)*.56);letter-spacing:.32em;color:rgba(212,180,131,.75)}
 .cards{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:var(--gap)}
@@ -298,12 +300,12 @@ SLIDES = {
          {'tall': '--t:58px;--gap:18px;--b:36px;--s:29px'}),
         ('루키 보너스 · <em>대상과 예시</em>',
          '<div class="split"><div class="card"><span class="tag">무경력 신인 대상</span><h3>3년 내 무경력 또는 3년 내 신계약 없음</h3>'
-         + ul(['등록시험 합격: 10만 원 + 10만 원', '등록 축하금: 100만 원', '추가 인센티브: 등록 당월 환산 30만 원 이상 시 100만 원', '등록 2~6차월 활동 지원: 환산 × 100%']) +
+         + ul(['등록 축하금: 100만 원', '추가 인센티브: 등록 당월 환산 30만 원 이상 시 100만 원', '등록 2~6차월 활동 지원: 환산 × 100%']) +
          '</div><div class="card"><span class="tag">예시 · 손보 기준</span><h3>등록 당월 환산 30만 원</h3>'
-         '<div style="margin-top:.6em"><div class="kv">등록 축하금<b>100만 원</b></div><div class="kv">합격 인센티브<b>20만 원</b></div><div class="kv">등록 인센티브<b>100만 원</b></div>'
+         '<div style="margin-top:.6em"><div class="kv">등록 축하금<b>100만 원</b></div><div class="kv">등록 인센티브<b>100만 원</b></div>'
          '<div class="kv">수수료<b>250만 원</b></div><div class="kv">13회 유지 · 시책비<b>300만 원</b></div></div>'
-         '<div class="total">총 800만 원<small>익월 500만 원 + 13회차 300만 원</small></div></div></div>' + FINE,
-         '루키 보너스 대상과 예시. 무경력 신인 대상으로 기준은 3년 내 무경력 또는 3년 내 신계약 없음. 등록시험 합격 10만 원 더하기 10만 원, 등록 축하금 100만 원, 등록 당월 환산 30만 원 이상 시 추가 인센티브 100만 원, 등록 2에서 6차월 활동 지원 환산의 100퍼센트. 손보 기준 등록 당월 환산 30만 원 예시: 등록 축하금 100만 원, 합격 인센티브 20만 원, 등록 인센티브 100만 원, 수수료 250만 원, 13회 유지·시책비 300만 원, 총 800만 원(익월 500만 원, 13회차 300만 원). 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다.',
+         '<div class="total">총 750만 원<small>익월 450만 원 + 13회차 300만 원</small></div></div></div>' + FINE,
+         '루키 보너스 대상과 예시. 무경력 신인 대상으로 기준은 3년 내 무경력 또는 3년 내 신계약 없음. 등록 축하금 100만 원, 등록 당월 환산 30만 원 이상 시 추가 인센티브 100만 원, 등록 2에서 6차월 활동 지원 환산의 100퍼센트. 손보 기준 등록 당월 환산 30만 원 예시: 등록 축하금 100만 원, 등록 인센티브 100만 원, 수수료 250만 원, 13회 유지·시책비 300만 원, 총 750만 원(익월 450만 원, 13회차 300만 원). 지급 기준은 회사 규정에 따르고 실적에 따라 달라집니다.',
          {'wide': '--b:30px;--s:23px;--t:54px;--gap:18px', 'tall': '--t:58px;--b:38px;--s:30px;--gap:20px'}),
         ('<em>장기 근속</em> 성장 지원금',
          flow(['1~12차월<small>1년 동안 체결한 총 보험료의 100%를 적립</small>', '*15차월부터<small>매달 차근차근 지급</small>']) +
@@ -381,7 +383,7 @@ def page(title, body, variant, opts=None):
         body = re.sub(r'--lw:[^"]*" data-lw-tall="([^"]*)"', r'--lw:\1"', body)
     return ('<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">'
             '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">'
-            f'<style>{CSS}</style></head><body class="{variant}" style="{(opts or {}).get(variant, "")}"><main><h1>{title}</h1>'
+            f'<style>{CSS}</style></head><body class="{variant}" style="{(opts or {}).get(variant, "")}"><main><h1><span>{title}</span></h1>'
             f'<div class="content">{body}</div></main><div class="mark">HERITAGE FINANCE</div></body></html>')
 
 
@@ -397,6 +399,21 @@ async def render(out_dir):
                     title, body = sl[0], sl[1]
                     await pg.set_content(page(title, body, variant, sl[3] if len(sl) > 3 else None), wait_until='networkidle')
                     await pg.evaluate('document.fonts.ready')
+                    # 제목: 글자 크기를 줄여 한 줄에 맞추고, 그래도 길면 두 줄로 고르게 나눈다
+                    tinfo = await pg.evaluate('''(()=>{const b=document.body,h=document.querySelector('h1'),sp=h.firstElementChild,
+                      base=parseFloat(getComputedStyle(b).getPropertyValue('--t')),set=v=>b.style.setProperty('--t',v+'px'),
+                      fits=()=>sp.getBoundingClientRect().width<=h.clientWidth+0.5;
+                      let t=base;while(!fits()&&t>base*0.85){t-=1;set(t)}
+                      if(fits())return '1줄 '+Math.round(t)+'px';
+                      // 두 줄: ' · ' 가 있으면 그 자리에서 나눈다
+                      const w=document.createTreeWalker(sp,NodeFilter.SHOW_TEXT);let last=null,n;
+                      while(n=w.nextNode())if(n.nodeValue.includes(' · '))last=n;
+                      if(last){const k=last.nodeValue.lastIndexOf(' · '),a=last.nodeValue.slice(0,k),c=last.nodeValue.slice(k+3);
+                        const f=document.createDocumentFragment();f.append(a,document.createElement('br'),c);last.replaceWith(f);
+                        t=base*0.92;set(t);while(!fits()&&t>base*0.6){t-=1;set(t)}}
+                      else{h.classList.add('two');t=base*0.9;set(t);
+                        const lh=()=>Math.round(sp.getClientRects().length);while(lh()>2&&t>base*0.6){t-=1;set(t)}}
+                      return '2줄 '+Math.round(t)+'px'})()''')
                     # 넘치면 글자·간격을 조금씩 줄여 맞춘다
                     over = await pg.evaluate('''(()=>{const m=document.querySelector('.content'),b=document.body,
                       get=()=>m.scrollHeight-m.clientHeight;
@@ -405,7 +422,7 @@ async def render(out_dir):
                       return get()})()''')
                     path = os.path.join(out_dir, f'{prefix}-{i}{suffix}.jpg')
                     await pg.screenshot(path=path, type='jpeg', quality=86)
-                    print(path, 'OVERFLOW %dpx' % over if over > 2 else 'ok')
+                    print(path, tinfo, 'OVERFLOW %dpx' % over if over > 2 else 'ok')
             await pg.close()
         await browser.close()
 
