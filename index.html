@@ -1174,14 +1174,7 @@ p[style*="font-size:10px"], div[style*="font-size:10px"], span[style*="font-size
   transition: background 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1);
 }
 .hx-btn:active { transform: translateY(1px); }
-.hx-profile-toggle { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 24px; margin-bottom: 0; background: transparent; border: 1px solid var(--gold-deep); color: var(--gold-deep); font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .25s, color .25s; }
-.hx-profile-toggle::after { content: ''; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .25s; }
-.hx-profile-toggle[aria-expanded="true"] { margin-bottom: 44px; }
-.hx-profile-toggle[aria-expanded="true"]::after { transform: translateY(2px) rotate(-135deg); }
-.hx-profile-toggle:hover, .hx-profile-toggle[aria-expanded="true"] { background: var(--gold-deep); color: #fff; }
-#hxProfile[hidden] { display: none !important; }
 #hxProfile { margin-bottom: 20px; }
-@media (max-width: 768px) { .hx-profile-toggle { width: 100%; justify-content: center; } .hx-profile-toggle[aria-expanded="true"] { margin-bottom: 32px; } }
 .hx-btn-gold { background: var(--gold); color: var(--dark); border-color: var(--gold); }
 .hx-btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
 .hx-btn-line { background: transparent; color: var(--gold-light); border-color: rgba(184,151,90,0.75); }
@@ -1283,7 +1276,7 @@ picture { display: block; }
 /* 모바일 하단 고정 바 */
 /* 둥근 모서리: 상자·버튼·입력칸을 부드럽게 */
 :root { --r-sm: 10px; --r: 14px; --r-lg: 18px; }
-.hx-btn, .btn-dark, .btn-outline, #applySubmitBtn, #inquirySubmitBtn, .hx-profile-toggle { border-radius: var(--r-sm); }
+.hx-btn, .btn-dark, .btn-outline, #applySubmitBtn, #inquirySubmitBtn { border-radius: var(--r-sm); }
 .hx-x { border-radius: 12px; }
 #applyForm input, #applyForm select, #applyForm textarea, #inquiryForm input, #inquiryForm select, #inquiryForm textarea { border-radius: var(--r-sm) !important; }
 #applyForm input[type="checkbox"], #inquiryForm input[type="checkbox"] { border-radius: 4px !important; }
@@ -1487,9 +1480,8 @@ picture img, #heritageModal img, #tourVideo { border-radius: var(--r); }
     <div class="section-eyebrow">ABOUT HERITAGE FINANCE</div>
     <h2 class="section-title">나의 전문성은<br>고객을 위한 최소한의 배려</h2>
     <div style="margin-top:60px;">
-        <button type="button" class="hx-profile-toggle" id="hxProfileBtn" aria-expanded="false" aria-controls="hxProfile" onclick="hxToggleProfile()"><span id="hxProfileBtnText">옥영훈 지사장 프로필 보기</span></button>
-        <!-- Profile Card Layout (버튼을 누르면 펼쳐짐) -->
-        <div id="hxProfile" hidden style="display:grid;grid-template-columns:420px 1fr;gap:70px;align-items:start;" class="profile-grid">
+        <!-- Profile Card Layout -->
+        <div id="hxProfile" style="display:grid;grid-template-columns:420px 1fr;gap:70px;align-items:start;" class="profile-grid">
           
           <!-- LEFT: Profile Photo Card -->
           <div style="position:relative;">
@@ -2735,13 +2727,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 // ── 공통: 모달 전환, 키보드 접근, Esc·배경 클릭·뒤로가기로 닫기 ──
-function hxToggleProfile() {
-  var box = document.getElementById('hxProfile'), btn = document.getElementById('hxProfileBtn');
-  var open = box.hidden;
-  box.hidden = !open;
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  document.getElementById('hxProfileBtnText').textContent = open ? '옥영훈 지사장 프로필 접기' : '옥영훈 지사장 프로필 보기';
-}
 var HX_MODALS = {
   heritageModal: closeHeritage, tourModal: closeTour, yeongupModal: closeYeongup, yuksungModal: closeYuksung,
   sodukModal: closeSoduk, promotionModal: closePromotion, careerPathModal: closeCareerPath, welfareModal: closeWelfare,
