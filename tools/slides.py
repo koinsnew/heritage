@@ -139,6 +139,11 @@ li::before{content:'';position:absolute;left:0;top:.62em;width:.34em;height:.34e
 .tall .stairs{height:auto}
 .chip .k{display:block;font-size:calc(var(--b)*1.9);font-weight:700;color:#d4b483;line-height:1.2}
 .chip .tag{display:block;font-size:var(--s);color:#d4b483;font-weight:700;margin-bottom:.3em}
+/* 상자 모서리는 홈페이지와 같이 둥글게 */
+.card,.cell,.chip,.node,.stair,.total,.ex,.row.top,.photos img{border-radius:14px}
+.bar i,.seg i{border-radius:8px}
+.tall .card,.tall .cell,.tall .chip,.tall .node,.tall .stair,.tall .total,.tall .ex,.tall .row.top,.tall .photos img{border-radius:20px}
+.tall .bar i,.tall .seg i{border-radius:10px}
 .fine{font-size:calc(var(--s)*.9);color:#a9a9a9;line-height:1.6;border-top:1px solid rgba(255,255,255,.16);padding-top:.8em}
 .seg{display:flex;gap:6px;margin-top:.5em}
 .seg i{flex:1;height:calc(var(--s)*.62);background:#b8975a}

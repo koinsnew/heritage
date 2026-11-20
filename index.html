@@ -1081,7 +1081,7 @@ footer {
   background: #fffdf8;
   border: 1px solid rgba(184,151,90,0.4);
   box-shadow: 0 30px 60px -30px rgba(60,45,20,0.35);
-  font-family: 'Nanum Myeongjo', 'Noto Sans KR', serif;
+  font-family: 'Noto Sans KR', sans-serif;
   color: #2b2620;
 }
 .hv-letter::before {
@@ -1281,6 +1281,19 @@ picture { display: block; }
 .hx-hint { color: #9a9a9a; font-size: 12px; margin-top: 12px; }
 
 /* 모바일 하단 고정 바 */
+/* 둥근 모서리: 상자·버튼·입력칸을 부드럽게 */
+:root { --r-sm: 10px; --r: 14px; --r-lg: 18px; }
+.hx-btn, .btn-dark, .btn-outline, #applySubmitBtn, #inquirySubmitBtn, .hx-profile-toggle { border-radius: var(--r-sm); }
+.hx-x { border-radius: 12px; }
+#applyForm input, #applyForm select, #applyForm textarea, #inquiryForm input, #inquiryForm select, #inquiryForm textarea { border-radius: var(--r-sm) !important; }
+#applyForm input[type="checkbox"], #inquiryForm input[type="checkbox"] { border-radius: 4px !important; }
+.support-grid { gap: 16px; background: none; }
+.support-item { border-radius: var(--r); border: 1px solid rgba(184,151,90,0.16); }
+.hv-letter { border-radius: var(--r-lg); }
+.hv-letter::before { border-radius: 10px; }
+.hx-consent, details.hx-more, [role="status"] { border-radius: var(--r); }
+.dropdown { border-radius: 0 0 12px 12px; }
+picture img, #heritageModal img, #tourVideo { border-radius: var(--r); }
 .hx-bar { display: none; }
 .hx-nav-cta { min-height: 40px; padding: 0 22px; font-size: 13px; flex: none; margin-left: -14px; }
 @media (max-width: 768px) { .hx-nav-cta { display: none; } }
@@ -1484,7 +1497,7 @@ picture { display: block; }
             <div style="position:absolute;top:0;left:-24px;width:4px;height:100%;background:linear-gradient(to bottom,var(--gold),transparent);"></div>
             
             <!-- Photo -->
-            <div style="overflow:hidden;position:relative;">
+            <div style="border-radius:16px;overflow:hidden;position:relative;">
               <img src="images/member-1.jpg" alt="옥영훈 지사장" style="width:100%;display:block;object-fit:cover;object-position:center top;">
               <!-- Bottom gradient overlay -->
               <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(17,17,17,0.95) 0%,transparent 100%);"></div>
@@ -1525,16 +1538,16 @@ picture { display: block; }
                 <span style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;">Certifications</span>
               </div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-                <div style="background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
+                <div style="border-radius:8px;background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
                   <p style="font-size:12px;color:#555;line-height:1.5;">국가공인 자산관리사 (은행)</p>
                 </div>
-                <div style="background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
+                <div style="border-radius:8px;background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
                   <p style="font-size:12px;color:#555;line-height:1.5;">펀드투자 권유자문인력</p>
                 </div>
-                <div style="background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
+                <div style="border-radius:8px;background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
                   <p style="font-size:12px;color:#555;line-height:1.5;">증권투자 권유자문인력</p>
                 </div>
-                <div style="background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
+                <div style="border-radius:8px;background:#f9f7f3;border-left:2px solid var(--gold);padding:10px 14px;">
                   <p style="font-size:12px;color:#555;line-height:1.5;">파생상품투자 권유자문인력</p>
                 </div>
               </div>
@@ -1664,7 +1677,7 @@ picture { display: block; }
 
       <!-- ROOT: 헤리티지금융지사 -->
       <div class="hx-org-root" style="display:flex;justify-content:center;margin-bottom:24px;">
-        <div style="background:var(--gold);color:var(--dark);font-weight:700;font-size:15px;letter-spacing:3px;padding:16px 60px;border:2px solid var(--gold);">
+        <div style="border-radius:10px;background:var(--gold);color:var(--dark);font-weight:700;font-size:15px;letter-spacing:3px;padding:16px 60px;border:2px solid var(--gold);">
           헤리티지금융지사
         </div>
       </div>
@@ -1673,27 +1686,27 @@ picture { display: block; }
       <div class="hx-org-grid" style="display:grid;grid-template-columns:2fr 1fr;gap:16px;">
 
         <!-- ① 마스터사업단 -->
-        <div style="border:1.5px solid var(--gold);background:rgba(184,151,90,0.05);">
-          <div onclick="openDongjun()" onmouseover="this.style.background='rgba(184,151,90,0.18)'" onmouseout="this.style.background='rgba(184,151,90,0.1)'" style="background:rgba(184,151,90,0.1);color:var(--dark);font-weight:700;font-size:14px;text-align:center;padding:16px 12px;border-bottom:1px solid rgba(184,151,90,0.3);cursor:pointer;letter-spacing:1px;transition:background 0.2s;">
+        <div style="border-radius:14px;border:1.5px solid var(--gold);background:rgba(184,151,90,0.05);">
+          <div onclick="openDongjun()" onmouseover="this.style.background='rgba(184,151,90,0.18)'" onmouseout="this.style.background='rgba(184,151,90,0.1)'" style="border-radius:13px 13px 0 0;background:rgba(184,151,90,0.1);color:var(--dark);font-weight:700;font-size:14px;text-align:center;padding:16px 12px;border-bottom:1px solid rgba(184,151,90,0.3);cursor:pointer;letter-spacing:1px;transition:background 0.2s;">
             마스터사업단
           </div>
           <div style="padding:14px 12px;display:flex;gap:8px;">
-            <div onclick="openJosieon()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;flex:1;">
+            <div onclick="openJosieon()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="border-radius:10px;background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;flex:1;">
               아너스지점
             </div>
-            <div onclick="openTaegon()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;flex:1;">
+            <div onclick="openTaegon()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="border-radius:10px;background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;flex:1;">
               리더스지점
             </div>
           </div>
         </div>
 
         <!-- ② 영업지원팀 -->
-        <div style="border:1.5px solid var(--gold);background:rgba(184,151,90,0.05);">
-          <div style="background:rgba(184,151,90,0.1);color:var(--dark);font-weight:700;font-size:14px;text-align:center;padding:16px 12px;border-bottom:1px solid rgba(184,151,90,0.3);letter-spacing:1px;">
+        <div style="border-radius:14px;border:1.5px solid var(--gold);background:rgba(184,151,90,0.05);">
+          <div style="border-radius:13px 13px 0 0;background:rgba(184,151,90,0.1);color:var(--dark);font-weight:700;font-size:14px;text-align:center;padding:16px 12px;border-bottom:1px solid rgba(184,151,90,0.3);letter-spacing:1px;">
             영업지원팀
           </div>
           <div style="padding:14px 12px;display:flex;flex-direction:column;gap:8px;">
-            <div onclick="openJinha()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;">
+            <div onclick="openJinha()" onmouseover="this.style.background='rgba(184,151,90,0.15)'" onmouseout="this.style.background='var(--dark)'" style="border-radius:10px;background:var(--dark);color:var(--white);text-align:center;padding:10px 8px;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;letter-spacing:1px;">
               총무
             </div>
           </div>
@@ -1707,7 +1720,7 @@ picture { display: block; }
 
 <!-- 조시온 지점장 프로필 모달 -->
 <div id="josieonModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:3000;overflow-y:auto;">
-  <div style="max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
+  <div style="border-radius:16px;overflow:hidden;max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
     <!-- 닫기 버튼 -->
     <button onclick="closeJosieon()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;z-index:10;line-height:1;">✕</button>
     <!-- 사진 -->
@@ -1741,7 +1754,7 @@ picture { display: block; }
 
 <!-- 김태건 리더스지점 지점장 프로필 모달 -->
 <div id="taegonModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:3000;overflow-y:auto;">
-  <div style="max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
+  <div style="border-radius:16px;overflow:hidden;max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
     <button onclick="closeTaegon()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;z-index:10;line-height:1;">✕</button>
     <div style="position:relative;overflow:hidden;">
       <img src="images/member-3.jpg" alt="김태건 지점장" style="width:100%;display:block;object-fit:cover;object-position:center top;max-height:460px;">
@@ -1771,7 +1784,7 @@ picture { display: block; }
 
 <!-- 박동준 사업단장 프로필 모달 -->
 <div id="dongjunModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:3000;overflow-y:auto;">
-  <div style="max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
+  <div style="border-radius:16px;overflow:hidden;max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
     <button onclick="closeDongjun()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;z-index:10;line-height:1;">✕</button>
     <div style="position:relative;overflow:hidden;">
       <img src="images/member-4.jpg" alt="박동준 사업단장" style="width:100%;display:block;object-fit:cover;object-position:center top;max-height:460px;">
@@ -1801,7 +1814,7 @@ picture { display: block; }
 
 <!-- 이진하 총무 프로필 모달 -->
 <div id="jinhaModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:3000;overflow-y:auto;">
-  <div style="max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
+  <div style="border-radius:16px;overflow:hidden;max-width:480px;margin:60px auto 40px;background:#111;position:relative;padding-bottom:40px;">
     <button onclick="closeJinha()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;z-index:10;line-height:1;">✕</button>
     <div style="position:relative;overflow:hidden;">
       <img src="images/member-5.jpg" alt="이진하 총무" style="width:100%;display:block;object-fit:cover;object-position:center top;max-height:460px;">
@@ -1891,11 +1904,11 @@ picture { display: block; }
     <div class="section-eyebrow">CONTACT</div>
     <h2 class="section-title">찾아오시는 길</h2>
     <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;text-align:left;">
-      <div style="background:var(--dark);padding:36px;color:var(--white);">
+      <div style="border-radius:16px;background:var(--dark);padding:36px;color:var(--white);">
         <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">ADDRESS</div>
         <p style="font-size:14px;line-height:1.8;color:rgba(255,255,255,0.8);">서울시 용산구 한강대로 257,<br>청룡빌딩 14층 한국보험금융 본사</p>
       </div>
-      <div style="background:var(--dark);padding:36px;color:var(--white);">
+      <div style="border-radius:16px;background:var(--dark);padding:36px;color:var(--white);">
         <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">TEL</div>
         <p style="font-size:20px;font-weight:700;color:var(--white);font-family:'Montserrat',sans-serif;"><a class="hx-tel-plain" href="tel:0269565323">02-6956-5323</a></p>
       </div>
@@ -2156,7 +2169,7 @@ if (statsEl) observer.observe(statsEl);
     <form id="inquiryForm" style="display:flex;flex-direction:column;gap:20px;">
 
       <!-- 기본 정보 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">기본 정보</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;">
@@ -2185,7 +2198,7 @@ if (statsEl) observer.observe(statsEl);
       </div>
 
       <!-- 문의 내용 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">문의 내용</h3>
         <div style="display:flex;flex-direction:column;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;">
@@ -2260,7 +2273,7 @@ if (statsEl) observer.observe(statsEl);
     <form id="applyForm" style="display:flex;flex-direction:column;gap:32px;">
 
       <!-- 먼저 받는 항목 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">먼저 이것만 남겨 주세요</h3>
         <p class="hx-form-note">성명과 연락처만 남기셔도 접수됩니다. 담당자가 확인한 뒤 연락드립니다.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
@@ -2275,7 +2288,7 @@ if (statsEl) observer.observe(statsEl);
         <summary><span>상세 지원서 작성 (선택)<small>인적사항, 학력, 경력, 자기소개를 미리 적어 두실 수 있습니다.</small></span></summary>
         <div class="hx-more-body">
       <!-- ① 기본인적사항 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">기본인적사항</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">성명(영문)</span><input name="name_en" placeholder="Hong Gil Dong" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;font-family:'Noto Sans KR',sans-serif;outline:none;border-radius:2px;"></label>
@@ -2306,7 +2319,7 @@ if (statsEl) observer.observe(statsEl);
       </div>
 
       <!-- ② 학력사항 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">학력사항</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">최종학력</span><select name="edu_level" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>고졸</option><option>전문대졸</option><option>대졸</option><option>대학원졸</option></select></label>
@@ -2316,7 +2329,7 @@ if (statsEl) observer.observe(statsEl);
       </div>
 
       <!-- ③ 경력사항 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">경력사항</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">경력구분</span><select name="career_type" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"><option value="">선택</option><option>신입</option><option>경력</option></select></label>
@@ -2329,7 +2342,7 @@ if (statsEl) observer.observe(statsEl);
       </div>
 
       <!-- ④ 간편 Q&A -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">간편 질문 &amp; 답변</h3>
         <div style="display:flex;flex-direction:column;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">Q1. 본인을 30자 이내로 표현해 주세요</span><input name="q1" maxlength="30" placeholder="30자 이내" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;"></label>
@@ -2342,7 +2355,7 @@ if (statsEl) observer.observe(statsEl);
       </div>
 
       <!-- ⑤ 자기소개 -->
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
+      <div style="border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(184,151,90,0.2);padding:28px 28px 20px;">
         <h3 style="font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:3px;color:#b8975a;margin-bottom:20px;border-bottom:1px solid rgba(184,151,90,0.2);padding-bottom:10px;">자기소개</h3>
         <div style="display:flex;flex-direction:column;gap:14px;">
           <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:12px;color:#aaa;">1. 성장 배경과 자신의 가치관(인생관)</span><textarea name="intro1" rows="4" placeholder="자유롭게 작성해 주세요" style="background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 12px;font-size:14px;outline:none;border-radius:2px;resize:vertical;font-family:'Noto Sans KR',sans-serif;line-height:1.7;"></textarea></label>
